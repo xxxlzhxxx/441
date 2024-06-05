@@ -18,62 +18,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChattTableCell" rowHeight="152" id="fzr-zx-isZ" customClass="ChattTableCell" customModule="swiftChatter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="152"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChattTableCell" rowHeight="137" id="fzr-zx-isZ" customClass="ChattTableCell" customModule="swiftChatter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="137"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fzr-zx-isZ" id="m20-m4-KoH">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="152"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="137"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFG-cv-YTl">
-                                            <rect key="frame" x="20" y="41.666666666666664" width="81" height="67.333333333333343"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="81" id="8Ws-Oj-0FQ"/>
-                                                <constraint firstAttribute="height" constant="21" id="Eb4-l5-tX4"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CU-fQ-f23">
-                                            <rect key="frame" x="292" y="11.000000000000002" width="81" height="30.666666666666671"/>
+                                            <rect key="frame" x="20" y="41.666666666666664" width="68.666666666666671" height="20.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vw5-cI-rRc">
                                             <rect key="frame" x="20" y="11.000000000000002" width="76" height="20.666666666666671"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20.5" id="uHv-qW-AAX"/>
-                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CU-fQ-f23">
+                                            <rect key="frame" x="292" y="10.999999999999998" width="81" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="3CU-fQ-f23" firstAttribute="top" secondItem="m20-m4-KoH" secondAttribute="topMargin" id="09Q-d9-Ei1"/>
-                                        <constraint firstItem="3CU-fQ-f23" firstAttribute="top" secondItem="m20-m4-KoH" secondAttribute="topMargin" id="2N9-fi-y53"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="3CU-fQ-f23" secondAttribute="trailing" id="6n6-6s-bOm"/>
-                                        <constraint firstItem="vw5-cI-rRc" firstAttribute="top" secondItem="m20-m4-KoH" secondAttribute="topMargin" id="BXf-7Z-RNl"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="EFG-cv-YTl" secondAttribute="bottom" id="EBq-MA-xdr"/>
-                                        <constraint firstItem="EFG-cv-YTl" firstAttribute="leading" secondItem="m20-m4-KoH" secondAttribute="leadingMargin" constant="217" id="KV9-7y-9r2"/>
-                                        <constraint firstItem="vw5-cI-rRc" firstAttribute="leading" secondItem="m20-m4-KoH" secondAttribute="leadingMargin" id="Mge-yI-wev"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="3CU-fQ-f23" secondAttribute="trailing" id="O1n-GS-Nf8"/>
-                                        <constraint firstItem="EFG-cv-YTl" firstAttribute="top" secondItem="3CU-fQ-f23" secondAttribute="bottom" id="Pbl-Ri-OiP"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="3CU-fQ-f23" secondAttribute="trailing" id="b63-53-70f"/>
-                                        <constraint firstItem="vw5-cI-rRc" firstAttribute="top" secondItem="m20-m4-KoH" secondAttribute="topMargin" id="clx-X6-9xd"/>
-                                        <constraint firstItem="EFG-cv-YTl" firstAttribute="leading" secondItem="m20-m4-KoH" secondAttribute="leadingMargin" id="eDm-zj-BWF"/>
-                                        <constraint firstItem="vw5-cI-rRc" firstAttribute="top" secondItem="m20-m4-KoH" secondAttribute="topMargin" id="f43-VO-RT7"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="EFG-cv-YTl" secondAttribute="bottom" constant="32" id="flK-Wx-Dom"/>
-                                        <constraint firstItem="vw5-cI-rRc" firstAttribute="top" secondItem="m20-m4-KoH" secondAttribute="topMargin" id="h22-Wv-S28"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="EFG-cv-YTl" secondAttribute="trailing" id="p4T-cc-PaY"/>
-                                        <constraint firstItem="vw5-cI-rRc" firstAttribute="leading" secondItem="m20-m4-KoH" secondAttribute="leadingMargin" id="qaK-Mr-yPW"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="EFG-cv-YTl" secondAttribute="bottom" priority="250" id="sWU-Fw-3XE"/>
-                                        <constraint firstItem="3CU-fQ-f23" firstAttribute="leading" secondItem="vw5-cI-rRc" secondAttribute="trailing" constant="217" id="t42-Nj-R7Y"/>
-                                        <constraint firstItem="EFG-cv-YTl" firstAttribute="top" secondItem="vw5-cI-rRc" secondAttribute="bottom" constant="10" id="z7U-p8-VVw"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3CU-fQ-f23" secondAttribute="trailing" id="4TF-j8-sKb"/>
+                                        <constraint firstItem="EFG-cv-YTl" firstAttribute="top" secondItem="vw5-cI-rRc" secondAttribute="bottom" constant="10" id="O28-kQ-HYL"/>
+                                        <constraint firstItem="EFG-cv-YTl" firstAttribute="top" secondItem="vw5-cI-rRc" secondAttribute="bottom" constant="10" id="PV5-6r-Q8t"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="EFG-cv-YTl" secondAttribute="bottom" priority="250" id="VD8-wv-5Tn"/>
+                                        <constraint firstItem="vw5-cI-rRc" firstAttribute="top" secondItem="m20-m4-KoH" secondAttribute="topMargin" id="dl6-Uf-BnS"/>
+                                        <constraint firstItem="3CU-fQ-f23" firstAttribute="top" secondItem="m20-m4-KoH" secondAttribute="topMargin" id="gfz-4H-dAo"/>
+                                        <constraint firstItem="EFG-cv-YTl" firstAttribute="leading" secondItem="m20-m4-KoH" secondAttribute="leadingMargin" id="kwE-kG-gd8"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="messageLabel" destination="EFG-cv-YTl" id="Dvn-8d-qHT"/>
+                                    <outlet property="timestampLabel" destination="3CU-fQ-f23" id="XqD-th-vkE"/>
+                                    <outlet property="usernameLabel" destination="vw5-cI-rRc" id="dqS-tu-4lV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -112,11 +97,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tHO-bm-Ugb">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="这xcode按键太多了，看的头晕眼花，spec好多东西说的也不清楚，还得猜是哪个，找来找去。。。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tHO-bm-Ugb">
                                 <rect key="frame" x="76" y="215" width="240" height="149.66666666666663"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI SB JI</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
