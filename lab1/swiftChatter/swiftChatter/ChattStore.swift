@@ -14,7 +14,7 @@ final class ChattStore {
     private(set) var chatts = [Chatt]()
     private let nFields = Mirror(reflecting: Chatt()).children.count
 
-    private let serverUrl = "https://47.103.129.164/"
+    private let serverUrl = "https://54.91.137.143/"
     
     
     func postChatt(_ chatt: Chatt) {
