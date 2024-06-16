@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import AVKit
+import SDWebImage
+
 
 final class MainVC: UITableViewController {
 
@@ -15,7 +18,19 @@ final class MainVC: UITableViewController {
         // setup refreshControler here later
         refreshControl?.addAction(UIAction(handler: refreshTimeline), for: UIControl.Event.valueChanged)
         
-        refreshTimeline(nil)
+        ChattStore.shared.getChatts()
+        ChattStore.shared.propertyNotifier.addObserver(
+            self,
+            selector: #selector(propertyObserver(_:)),
+            name: ChattStore.shared.propertyName,
+            object: nil
+        )
+    }
+    
+    @objc private func propertyObserver(_ event: NSNotification) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,15 +63,38 @@ final class MainVC: UITableViewController {
         return cell
     }
     
-    private func refreshTimeline(_ sender: UIAction?) {
-        ChattStore.shared.getChatts { success in
-            DispatchQueue.main.async {
-                if success {
-                    self.tableView.reloadData()
-                }
-                // stop the refreshing animation upon completion:
-                self.refreshControl?.endRefreshing()
-            }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let urlString = chatt.imageUrl, let imageUrl = URL(string: urlString) {
+            cell.chattImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(systemName: "photo"), options: [.progressiveLoad])
+            cell.chattImageView.isHidden = false
+        } else {
+            cell.chattImageView.image = nil
+            cell.chattImageView.isHidden = true
         }
+        if let urlString = chatt.videoUrl, let videoUrl = URL(string: urlString) {
+            cell.videoButton.isHidden = false // remember: cells are recycled and reused
+            cell.playVideo = {
+                let avPlayerVC = AVPlayerViewController()
+                avPlayerVC.player = AVPlayer(url: videoUrl)
+                if let player = avPlayerVC.player {
+                    self.present(avPlayerVC, animated: true) {
+                        player.play()
+                    }
+                }
+            }
+        } else {
+            cell.videoButton.isHidden = true
+            cell.playVideo = nil
+        }
+        return cell
+    }
+        
+        
+        
+    private func refreshTimeline(_ sender: UIAction?) {
+        ChattStore.shared.getChatts()
+
+        // stop the refreshing animation upon completion:
+        self.refreshControl?.endRefreshing()
     }
 }
