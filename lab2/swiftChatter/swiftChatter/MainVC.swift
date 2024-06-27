@@ -48,22 +48,20 @@ final class MainVC: UITableViewController {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
-//    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        // populate a single cell
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChattTableCell", for: indexPath) as? ChattTableCell else {
-//            fatalError("No reusable cell!")
-//        }
-//        
-//        let chatt = ChattStore.shared.chatts[indexPath.row]
-//        cell.backgroundColor = (indexPath.row % 2 == 0) ? .systemGray5 : .systemGray6
-//        cell.usernameLabel.text = chatt.username
-//        cell.messageLabel.text = chatt.message
-//        cell.timestampLabel.text = chatt.timestamp
-//        return cell
-//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // populate a single cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChattTableCell", for: indexPath) as? ChattTableCell else {
+            fatalError("No reusable cell!")
+        }
+        
+        let chatt = ChattStore.shared.chatts[indexPath.row]
+        cell.backgroundColor = (indexPath.row % 2 == 0) ? .systemGray5 : .systemGray6
+        cell.usernameLabel.text = chatt.username
+        cell.messageLabel.text = chatt.message
+        cell.timestampLabel.text = chatt.timestamp
+        
+        
         if let urlString = chatt.imageUrl, let imageUrl = URL(string: urlString) {
             cell.chattImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(systemName: "photo"), options: [.progressiveLoad])
             cell.chattImageView.isHidden = false
@@ -88,7 +86,7 @@ final class MainVC: UITableViewController {
         }
         return cell
     }
-        
+     
         
         
     private func refreshTimeline(_ sender: UIAction?) {
