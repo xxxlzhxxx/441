@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var store = ChattStore.shared
+
     @State private var isPresenting = false
+    
     var body: some View {
         NavigationView {
             List(store.chatts.indices, id: \.self) {
@@ -34,6 +36,9 @@ struct MainView: View {
                     }
                 }
         }
+        
+        
+        
     }
 }
 
