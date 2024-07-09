@@ -47,7 +47,7 @@ final class ChattStore: ObservableObject {
            }.resume()
        }
     
-    func getChatts(completion: ((Bool) -> ())?) {
+    func getChatts() {
             guard let apiUrl = URL(string: serverUrl+"getchatts/") else {
                 print("getChatts: Bad URL")
                 return
